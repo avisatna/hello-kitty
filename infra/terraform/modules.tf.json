@@ -7,57 +7,64 @@
       "create_function_url": true,
       "description": null,
       "environment_variables": {
-        "IMAGES_BUCKET": "hellokittyavinash"
+        "IMAGES_BUCKET": "hellokitty-avinash1"
       },
       "event_source_arn": null,
       "event_source_mapping": [],
       "filename": null,
-      "function_name": "hello-kitty-function-avinashsingh",
+      "function_name": "hello-kitty-function-avinash1",
       "handler": "main.lambda_handler",
       "log_format": null,
       "log_group_name": "${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.name}",
       "memory_size": 128,
       "role": "${module.appcd_b71fd16c-797e-5a95-8e1b-ab22f1e34f43.arn}",
       "runtime": "python3.8",
-      "s3_bucket": "stackgen-builds",
+      "s3_bucket": "avisatna1",
       "s3_key": null,
       "s3_object_version": null,
       "source": "./modules/aws_lambda",
       "system_log_level": null,
       "tags": {
-        "appstack": "HelloKitty",
+        "appstack": "hellokitty-avinash",
         "component": "hello-kitty"
       },
       "timeout": 3
     },
-    "appcd_0d848b18-3ff8-4624-a297-44579255322b": {
-      "name": "aws_s3-hello-kitty-policy-avinashsingh",
-      "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"AllowKmsAccess\",\n      \"Action\": [\n        \"kms:Decrypt\",\n        \"kms:Encrypt\",\n        \"kms:GenerateDataKey\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.kms_arn}\"\n      ]\n    },\n    {\n      \"Sid\": \"hellokittyIMAGESBUCKETS3Bucket551e1d2b88ec540687cfc51521bbe894\",\n      \"Action\": [\n        \"s3:PutObject\",\n        \"s3:ListBucket\",\n        \"s3:GetObject\",\n        \"s3:GetObjectVersion\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.arn}\",\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.arn}/*\"\n      ]\n    }\n  ]\n}",
+    "appcd_19ae5c9f-b8d8-4cb6-9b53-572a852a370b": {
+      "name": "writer-avinash1",
+      "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"CloudWatchLogGroup86ec452a770a59bf87dd67ed883e25e5\",\"Action\":[\"logs:CreateLogGroup\"],\"Effect\":\"Allow\",\"Resource\":[\"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}\"]},{\"Sid\":\"\",\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Effect\":\"Allow\",\"Resource\":[\"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}:*\"]}]}",
       "role": "${module.appcd_b71fd16c-797e-5a95-8e1b-ab22f1e34f43.name}",
-      "role_type": "Custom",
+      "role_type": "Writer",
       "source": "./modules/aws_iam_role_policy"
     },
     "appcd_551e1d2b-88ec-5406-87cf-c51521bbe894": {
       "block_public_access": true,
-      "bucket_name": "avisatna",
+      "bucket_name": "avisatna1",
       "bucket_policy": "",
       "enable_versioning": true,
       "enable_website_configuration": false,
       "source": "./modules/aws_s3",
       "sse_algorithm": "aws:kms",
       "tags": {
-        "appstack": "HelloKitty",
+        "appstack": "hellokitty-avinash",
         "component": "hello-kitty"
       },
       "website_error_document": "404.html",
       "website_index_document": "index.html"
     },
+    "appcd_79ad1a62-0a01-492b-b81c-c5f5c97ffc6c": {
+      "name": "aws_s3-hello-kitty-policy-avinash1",
+      "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"AllowKmsAccess\",\n      \"Action\": [\n        \"kms:Decrypt\",\n        \"kms:Encrypt\",\n        \"kms:GenerateDataKey\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.kms_arn}\"\n      ]\n    },\n    {\n      \"Sid\": \"hellokittyIMAGESBUCKETS3Bucket551e1d2b88ec540687cfc51521bbe894\",\n      \"Action\": [\n        \"s3:PutObject\",\n        \"s3:ListBucket\",\n        \"s3:GetObject\",\n        \"s3:GetObjectVersion\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.arn}\",\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.arn}/*\"\n      ]\n    }\n  ]\n}",
+      "role": "${module.appcd_b71fd16c-797e-5a95-8e1b-ab22f1e34f43.name}",
+      "role_type": "Custom",
+      "source": "./modules/aws_iam_role_policy"
+    },
     "appcd_86ec452a-770a-59bf-87dd-67ed883e25e5": {
-      "name": "/aws/lambda/hello-kitty-function-avinashsingh",
+      "name": "/aws/lambda/hello-kitty-function-avinash1",
       "retention_in_days": 7,
       "source": "./modules/aws_cloudwatch_log_group",
       "tags": {
-        "appstack": "HelloKitty",
+        "appstack": "hellokitty-avinash",
         "component": "hello-kitty"
       }
     },
@@ -66,19 +73,12 @@
       "description": null,
       "force_detach_policies": true,
       "inline_policy": [],
-      "name": "hello-kitty-role-avinashsingh",
+      "name": "hello-kitty-role-avinash1",
       "source": "./modules/aws_iam_role",
       "tags": {
-        "appstack": "HelloKitty",
+        "appstack": "hellokitty-avinash",
         "component": "hello-kitty"
       }
-    },
-    "appcd_d7075f8f-1c54-4046-bc98-8224a69b2db4": {
-      "name": "Writer-avinashsingh",
-      "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"CloudWatchLogGroup86ec452a770a59bf87dd67ed883e25e5\",\"Action\":[\"logs:CreateLogGroup\"],\"Effect\":\"Allow\",\"Resource\":[\"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}\"]},{\"Sid\":\"\",\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Effect\":\"Allow\",\"Resource\":[\"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}:*\"]}]}",
-      "role": "${module.appcd_b71fd16c-797e-5a95-8e1b-ab22f1e34f43.name}",
-      "role_type": "Writer",
-      "source": "./modules/aws_iam_role_policy"
     }
   }
 }
