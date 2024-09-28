@@ -7,12 +7,12 @@
       "create_function_url": true,
       "description": null,
       "environment_variables": {
-        "IMAGES_BUCKET": "Hellokittyavinash"
+        "IMAGES_BUCKET": "hellokittyavinash"
       },
       "event_source_arn": null,
       "event_source_mapping": [],
       "filename": null,
-      "function_name": "hello-kitty-function-AvinashSingh",
+      "function_name": "hello-kitty-function-avinashsingh",
       "handler": "main.lambda_handler",
       "log_format": null,
       "log_group_name": "${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.name}",
